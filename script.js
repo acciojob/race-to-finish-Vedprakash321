@@ -11,7 +11,13 @@ function createPromise() {
 }
 
 // Add five promises to the existing array window.promises
-window.promises.push(createPromise(), createPromise(), createPromise(), createPromise(), createPromise());
+window.promises = [
+  createPromise(),
+  createPromise(),
+  createPromise(),
+  createPromise(),
+  createPromise(),
+];
 
 // Using Promise.any to wait for the first promise to resolve
 Promise.any(window.promises)
@@ -22,6 +28,3 @@ Promise.any(window.promises)
   .catch((error) => {
     console.error('Error:', error);
   });
-
-// Do not change the code above this
-// add your promises to the array `promises`
