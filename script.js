@@ -1,4 +1,3 @@
-window.promises = [];
 // script.js
 
 // Function to create a promise that resolves with a random time
@@ -11,11 +10,11 @@ function createPromise() {
   });
 }
 
-// Array of five promises
-const promises = Array.from({ length: 5 }, createPromise);
+// Add five promises to the existing array window.promises
+window.promises.push(createPromise(), createPromise(), createPromise(), createPromise(), createPromise());
 
 // Using Promise.any to wait for the first promise to resolve
-Promise.any(promises)
+Promise.any(window.promises)
   .then((result) => {
     // Print the result in the output div
     document.getElementById('output').innerText = result;
